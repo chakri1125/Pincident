@@ -1,0 +1,132 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Profile</title>
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto d-flex flex-column">
+
+    <main class="m-auto flex-fill d-flex flex-column">
+
+        <div class="login-form d-flex flex-column bg-color3 rounded-3">
+            <div
+                class="d-flex justify-content-between mx-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+                <div class="header-txt1">
+                    Edit
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="mx-2 btn-custom">
+                        <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" alt="close">
+                    </button>
+                </div>
+            </div>
+            <div class="tab-container m-0">
+                <button class="tab-button active" onclick="moveLine(this)">My details</button>
+                <button class="tab-button" onclick="moveLine(this)">My avatar</button>
+                <div class="tabline"></div>
+            </div>
+
+            <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                <div class="mb-5">
+                    <div class="d-flex justify-content-center margin-top-50 margin-bottom-50">
+                        <div class="">
+                            <div class="avatar-wrapper1">
+                                <img src="{{ url_for('static', path='img/svg/avatar_ring.svg') }}" class="avatar-img1"
+                                    alt="Avatar" />
+                            </div>
+                            <div class="avatar-ring1">
+                                <div class="avatar-in1">
+                                    <div class="avatar-in2 overflow-hidden">
+                                        <img src="{{ url_for('static', path='img/Ellipse 34.jpg') }}" class="avatar-img"
+                                            alt="Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-edit1 btn btn-custom p-0">
+                            <img src="{{ url_for('static', path='img/svg/edit_avatar.svg') }}" alt="edit">
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="border country-circle">
+                                <div class="dropdown btn">
+                                    <div class="dropdown-toggle" data-bs-toggle="dropdown">
+                                        <span class="fi fi-us"></span>
+                                    </div>
+                                    <ul class="dropdown-menu width-10">
+                                        <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                        <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                        <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                        <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                        <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="margin-left-10">
+                                <input type="text" class="form-control height-54" placeholder="+27 83 772 8933"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <a href="/change_password" class="btn btn-secondary btn-custom">
+                            <span class="text-decoration-underline">Change password</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-block d-sm-none d-lg-none d-md-none d-xl-none">
+                <div class="header-txt1">
+                    Edit my avatar
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="d-flex">
+                        <img src="{{ url_for('static', path='img/svg/blank_avatar.svg') }}" alt="blank">
+                        <div class="m-edit btn btn-custom p-0">
+                            <img src="{{ url_for('static', path='img/svg/edit_avatar.svg') }}" alt="edit">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 mb-3">
+                    <input type="text" class="form-control" placeholder="Avatar name">
+                </div>
+            </div>
+            <div class="d-grid gap-3" href="#">
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+
+    </main>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function moveLine(button) {
+        var tabButtons = document.querySelectorAll('.tab-button');
+        var line = document.querySelector('.tabline');
+
+        tabButtons.forEach(function (tabButton) {
+            tabButton.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        var activeButtonRect = button.getBoundingClientRect();
+        var containerRect = button.parentNode.getBoundingClientRect();
+        var offsetLeft = activeButtonRect.left - containerRect.left;
+
+        line.style.transform = 'translateX(' + offsetLeft + 'px)';
+    }
+</script>
+{% endblock %}

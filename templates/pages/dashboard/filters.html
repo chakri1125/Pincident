@@ -1,0 +1,111 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="filters rounded-4 p-4">
+    <div class="overflow-auto filters-height">
+        <div class="d-flex justify-content-between sticky-top mb-4 bg-color2">
+            <div class="filters-title">
+                Filters
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" alt="close">
+        </div>
+        <div class="filters-txt1 mt-4">
+            CATEGORY
+        </div>
+        <div class="d-flex">
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Event
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Crime
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Traffic
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Medical
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Lost & Found
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                <div class="filters-txt2">
+                    Other
+                </div>
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+            </div>
+        </div>
+        <div class="filters-txt1 mt-4">
+            DISTANCE
+        </div>
+        <div class="mt-3 d-flex justify-content-between">
+            <div class="filters-txt3">
+                Within
+            </div>
+            <div class="filters-txt4">
+                2km
+            </div>
+        </div>
+        <input class="slider w-100 mt-3" type="range" value="50" max="100" min="1" oninput="this.nextElementSibling.value = this.value">
+        <div class="filters-txt1 mt-4">
+            TIME POSTED
+        </div>
+        <div class="d-flex mt-3">
+            <div class="bg-filter text-center rounded-3 p-3 filters-txt2 me-2">
+                This week
+            </div>
+            <div class="bg-filter2 text-center rounded-3 p-3 filters-txt2 me-2">
+                Today
+            </div>
+            <div class="bg-filter2 text-center rounded-3 p-3 filters-txt2 me-2">
+                Last hour
+            </div>
+        </div>
+        <div class="filters-txt1 mt-4">
+            VERIFICATION STATUS
+        </div>
+        <div class="d-flex mt-3">
+            <div class="bg-filter text-center rounded-3 p-3 filters-txt2 me-2">
+                Any
+            </div>
+            <div class="bg-filter2 text-center rounded-3 p-3 filters-txt2 me-2">
+                Verified only
+            </div>
+        </div>
+        <div class="sticky-bottom bg-color2">
+            <a type="submit" href="#" class="btn btn-primary d-grid mt-btn" href="#">Apply</a>
+            <a href="#" class="btn btn-secondary d-grid mt-3">Reset to default</a>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

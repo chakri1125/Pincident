@@ -1,0 +1,130 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="dent-search rounded-4">
+    <div class="fixed-height overflow-auto">
+        <div style="overflow:hidden;height: 30%;width: 100%;">
+            <div id="map3" class="h-100">
+                <div class="sticky-top bg-color h-50 p-2">
+                    <div
+                        class="d-flex justify-content-between mx-2 mt-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+                        <div class="notifications-title">
+                            Zone details
+                        </div>
+                        <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" class="img-size mt-2"
+                            alt="close">
+                    </div>
+                </div>
+                <div class="bg-bottom h-50 sticky-bottom">
+                    <a class="d-grid gap-3 map-btn1-position map-btn1 map-btn" href="/dent_detail" id="map-btn">
+                        <button type="button" class="btn btn-primary map-btn1">Continue</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="dent-detail-width mx-auto p-3">
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Title">
+            </div>
+            <div class="d-grid mb-3">
+                <textarea type="text" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div class="zone-detail-txt1">
+                Alert me of <span class="text-primary">dents</span> in these categories
+            </div>
+            <div class="d-flex flex-wrap">
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Event
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Crime
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Traffic
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Medical
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Lost & Found
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+                <div class="d-flex mt-3 p-3 justify-content-between bg-filter rounded-3 me-2">
+                    <div class="filters-txt2">
+                        Other
+                    </div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/close2.svg') }}" alt="close">
+                </div>
+            </div>
+            <div class="d-grid mb-3 mt-3">
+                <div class="btn btn-custom d-flex justify-content-between p-3 zone-detail-border">
+                    <div class="zone-detail-txt2">Members</div>
+                    <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Next_icon.svg') }}" alt="next">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="d-flex justify-content-between sticky-bottom w-90 mx-auto">
+            <button class="btn btn-custom zone-detail-txt3 d-none d-xl-block d-sm-block d-md-block d-lg-block">
+                Change location
+            </button>
+            <a class="d-grid gap-3 zone-detail-btn1">
+                <button type="button" class="btn btn-primary map-btn1">Create zone</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+    var map = L.map('map3', {
+        zoomControl: false
+    }).setView([51.505, -0.09], 13);
+
+    // Add the dark-themed tile layer
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+    }).addTo(map);
+
+    var customIcon = L.icon({
+        iconUrl: `{{ url_for('static', path='img/svg/centerpoint.svg') }}`,
+        iconSize: [80, 80],
+    });
+
+    map.attributionControl.remove();
+
+    var marker = L.marker([51.5, -0.09], { icon: customIcon }).addTo(map);
+</script>
+
+{% endblock %}

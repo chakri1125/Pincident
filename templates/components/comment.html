@@ -1,0 +1,382 @@
+<div class="bg-color p-4 mb-4">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/Subtract.svg') }}" alt="Subtract" />
+            <div class="mx-2 commenting-txt1">
+                Crime
+            </div>
+        </div>
+        <div class="txt-time">
+            5m ago
+        </div>
+    </div>
+    <div class="mt-3 txt-title">
+        Robbery at the mall
+    </div>
+    <p class="commenting-txt2"><b>Home,</b> Paarl, Western Cape</p>
+    <div class="d-flex">
+        <div>
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/State.svg') }}" alt="State" />
+        </div>
+        <div class="mx-2 mt-1 commenting-txt3">
+            Verified by SAPS
+        </div>
+    </div>
+    <p class="commenting-txt4  mt-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem ipsum dolor sit
+        met, consect... <a href="#"> See more</a>
+    </p>
+    <p class="commenting-txt2">
+        #robbery #mall
+    </p>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <img class="main-img" src="{{ url_for('static', path= 'img/main_img.png' )}}" alt="main-img" />
+        </div>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 d-none d-sm-block d-md-block d-lg-block d-xl-block sidebar_bg">
+            <div class="row mt-4 mt-sm-0 mt-md-0 mt-lg-0 mt-xl-0">
+                <div class="col-6">
+                    <img class="main-img" src="{{ url_for('static', path= 'img/sub_img1.png' )}}" alt="sub_img1" />
+                </div>
+                <div class="col-6">
+                    <img class="main-img" src="{{ url_for('static', path= 'img/sub_img2.png' )}}" alt="sub_img2" />
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-6">
+                    <img class="main-img" src="{{ url_for('static', path= 'img/sub_img3.png' )}}" alt="sub_img3" />
+                </div>
+                <div class="col-6">
+                    <img class="main-img" src="{{ url_for('static', path= 'img/sub_img4.png' )}}" alt="sub_img4" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex mt-3">
+        <div>
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/visibility.svg') }}" alt="Eye" />
+        </div>
+        <div class="mx-1 commenting-txt5 mt-1">
+            1,453
+        </div>
+        <div class="ms-3">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}" alt="emotion1" />
+        </div>
+        <div class="m-emotion">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/thumbsup.svg') }}" alt="emotion2" />
+        </div>
+        <div class="m-emotion">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/angry.svg') }}" alt="emotion3" />
+        </div>
+        <div class="mx-1 commenting-txt5 mt-1">
+            223
+        </div>
+        <div class="ms-3">
+            <img class="ml-4" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}"
+                alt="chat_bubble_outline" />
+        </div>
+        <div class="mx-1 commenting-txt5 mt-1">
+            43
+        </div>
+    </div>
+    <div class="line mt-3"></div>
+    <div class="d-flex mt-3">
+        <div class="d-flex">
+            <div>
+                <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar1.svg') }}" alt="Avatar1" />
+            </div>
+            <div class="online mt-4"></div>
+        </div>
+        <div class="ms-3 w-100">
+            <input type="text" class="commenting-input p-2 commenting-txt6" placeholder="What is on your mind?"
+                onfocus="showDiv()">
+            <div class="d-flex mt-3 justify-content-between nextdiv" id="nextDiv">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label commenting-txt2 ms-2" for="flexCheckDefault">
+                        I understand and accept the<br> <a href="#">commenting policy</a>.
+                    </label>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-custom mx-3 btn-cancel" onclick="hide()">Cancel</button>
+                    <button class="btn btn-custom send-btn">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/send.svg') }}" alt="send" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nextDiv2" class="nextdiv flex-column">
+        <div class="d-flex mt-3">
+            <div class="d-flex">
+                <div>
+                    <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar2.svg') }}" alt="Avatar2" />
+                </div>
+                <div class="online mt-4"></div>
+            </div>
+            <div class="w-100">
+                <div class="ms-3 comment-border p-2">
+                    <span class="commenting-txt1">
+                        Mphosiswe Nkosi &nbsp;
+                    </span>
+                    <span class="commenting-txt2">5m ago</span>
+                    <p class="commenting-txt2 mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem ipsum
+                        sit amet, consectetur adipiscing elit.
+                    </p>
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <button class="btn btn-custom commenting-txt1 p-0">
+                                Like
+                            </button>
+                            <button class="btn btn-custom ms-2 commenting-txt1 p-0">
+                                Reply
+                            </button>
+                            <div class="ms-3">
+                                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/thumbsup.svg') }}"
+                                    alt="emotion2" />
+                            </div>
+                            <div class="m-emotion">
+                                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}"
+                                    alt="emotion1" />
+                            </div>
+                            <div class="mx-1 commenting-txt5 mt-1">
+                                13
+                            </div>
+                        </div>
+                        <button class="btn btn-custom p-0">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                                alt="more-horiz" />
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex mt-3 px-3">
+                    <div class="d-flex">
+                        <div>
+                            <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar5.svg') }}"
+                                style="width: 22px; height: 22px;" alt="Avatar5" />
+                        </div>
+                        <div class="online mt-3"></div>
+                    </div>
+                    <div class="commenting-txt5 ms-2 mt-1">
+                        Juji Nampho replied · <span><button class="btn btn-custom commenting-txt2 p-0">22
+                                replies</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3">
+            <div class="d-flex">
+                <div>
+                    <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar3.svg') }}" alt="Avatar2" />
+                </div>
+                <div class="online mt-4"></div>
+            </div>
+            <div class="ms-3 w-100 comment-border p-2">
+                <span class="commenting-txt1">
+                    Mphosiswe Nkosi &nbsp;
+                </span>
+                <span class="commenting-txt2">1h ago</span>
+                <p class="commenting-txt2 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <button class="btn btn-custom commenting-txt1 p-0">
+                            Like
+                        </button>
+                        <button class="btn btn-custom ms-2 commenting-txt1 p-0">
+                            Reply
+                        </button>
+                    </div>
+                    <button class="btn btn-custom p-0">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                            alt="more-horiz" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3">
+            <div class="d-flex">
+                <div>
+                    <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar4.svg') }}" alt="Avatar2" />
+                </div>
+                <div class="online mt-4"></div>
+            </div>
+            <div class="ms-3 w-100 comment-border p-2">
+                <span class="commenting-txt1">
+                    Mphosiswe Nkosi &nbsp;
+                </span>
+                <span class="commenting-txt2">3h ago</span>
+                <p class="commenting-txt2 mt-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem ipsum
+                    sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <button class="btn btn-custom commenting-txt1 p-0">
+                            Like
+                        </button>
+                        <button class="btn btn-custom ms-2 commenting-txt1 p-0">
+                            Reply
+                        </button>
+                        <div class="ms-3">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/thumbsup.svg') }}"
+                                alt="emotion2" />
+                        </div>
+                        <div class="m-emotion">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/heart.svg') }}"
+                                alt="emotion1" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            3
+                        </div>
+                    </div>
+                    <button class="btn btn-custom p-0">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                            alt="more-horiz" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button class="text-center txt-time mt-3 btn-custom btn p-0">
+            View more comments
+        </button>
+    </div>
+    <div class="line mt-3"></div>
+    <div class="d-flex justify-content-between mt-3">
+        <div class="d-flex">
+            <button class="d-flex btn btn-custom p-0" id="openVerifyModal" data-bs-toggle="modal"
+                data-bs-target="#exampleModalToggle">
+                <img src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}" alt="Verify" />
+                <div class="mx-2 commenting-txt1">
+                    Verify
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="openVerifyModal2">
+                <img src="{{ url_for('static', path='img/svg/Ads/verified.svg') }}" alt="Verify" />
+                <div class="mx-2 commenting-txt1 text-success fw-bold">
+                    Verified
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/error_outline.svg') }}" alt="Dispute" />
+                <div class="mx-2 commenting-txt1">
+                    Dispute
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0" id="Like" data-bs-toggle="modal" data-bs-target="#emotions">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}" alt="Like" />
+                <div class="mx-2 commenting-txt1">
+                    Like
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="1thumbsUp">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Thumbs-up.svg') }}"
+                    style="width: 17px; height: 17px;" alt="Thumbs-up" />
+                <div class="mx-1 commenting-txt1 text-warning">
+                    Thumbs-up
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="2redHeart">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Red Heart.svg') }}"
+                    style="width: 17px; height: 17px;" alt="Red Heart" />
+                <div class="mx-1 commenting-txt1 text-danger">
+                    Red Heart
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="3grinningFace">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Grinning face.svg') }}"
+                    style="width: 17px; height: 17px;" alt="Grinning face" />
+                <div class="mx-1 commenting-txt1 text-warning">
+                    Grinning face
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="4hushedFace">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Hushed face.svg') }}"
+                    style="width: 17px; height: 17px;" alt="Hushed face" />
+                <div class="mx-1 commenting-txt1 text-warning">
+                    Hushed face
+                </div>
+            </button>
+            <button class="d-flex btn btn-custom p-0 d-none" id="5poutingFace">
+                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Pouting face.svg') }}"
+                    style="width: 17px; height: 17px;" alt="Pouting face" />
+                <div class="mx-1 commenting-txt1 text-danger">
+                    Pouting face
+                </div>
+            </button>
+        </div>
+        <div class="modal fade" style="width: fit-content;" id="emotions" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content emotion rounded-5 d-flex p-1">
+                    <div class="modal-body border-0">
+                        <button class="btn btn-custom p-0" onclick="thumbsUp()" data-bs-dismiss="modal">
+                            <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Thumbs-up.svg') }}"
+                                alt="Thumbs-up" />
+                        </button>
+                        <button class="btn btn-custom p-0">
+                            <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Red Heart.svg') }}"
+                                alt="Red Heart" />
+                        </button>
+                        <button class="btn btn-custom p-0">
+                            <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Grinning face.svg') }}"
+                                alt="Grinning face" />
+                        </button>
+                        <button class="btn btn-custom p-0">
+                            <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Hushed face.svg') }}"
+                                alt="Hushed face" />
+                        </button>
+                        <button class="btn btn-custom p-0">
+                            <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Pouting face.svg') }}"
+                                alt="Pouting face" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative">
+            <button class="btn btn-custom p-0" onclick="showShare()">
+                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                    alt="more-horiz" />
+            </button>
+            <div class="d-flex flex-column emotion threedot align-items-center share" id="share">
+                <button class="btn btn-custom p-0" onclick="showShare()">
+                    <div class="d-flex">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/upload_icon.svg') }}"
+                            style="width: 18px;" alt="more-horiz" />
+                        <div class="commenting-txt1 mt-1 ms-2">
+                            Share
+                        </div>
+                    </div>
+                </button>
+                <button class="btn btn-custom p-0" onclick="showShare()">
+                    <div class="d-flex mt-3">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/warning_icon.svg') }}"
+                            style="width: 18px;" alt="more-horiz" />
+                        <div class="commenting-txt1 mt-1 ms-2">
+                            Report
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function thumbsUp() {
+        var thumbsUp1 = document.getElementById('1thumbsUp');
+        var like = document.getElementById('Like');
+        thumbsUp1.classList.remove('d-none');
+        like.classList.add('d-none');
+    }
+
+    function showShare() {
+        var div = document.getElementById('share');
+        if(div.classList.contains('show')) {
+            div.classList.remove('show');
+        }
+        else div.classList.add('show');
+    }
+</script>

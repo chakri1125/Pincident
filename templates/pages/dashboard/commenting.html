@@ -1,0 +1,686 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="d-flex flex-column mx-auto">
+    {% include "layout/header.html" %}
+
+    <div class="d-block d-sm-none d-md-none d-lg-none d-xl-none mt-3">
+        {% block tab %}
+        {% include "components/tab.html" %}
+        {% endblock %}
+    </div>
+
+    <div class="container commenting">
+        <main class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-custom overflow-auto fixed-height">
+                {% block comment %}
+                {% include "components/comment.html" %}
+                {% endblock %}
+                {% block comment2 %}
+                {% include "components/comment.html" %}
+                {% endblock %}
+                <div class="bg-color p-4 mb-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/Subtract.svg') }}"
+                                alt="Subtract" />
+                            <div class="mx-2 commenting-txt1">
+                                Crime
+                            </div>
+                        </div>
+                        <div class="txt-time">
+                            5m ago
+                        </div>
+                    </div>
+                    <div class="mt-3 txt-title">
+                        Hijacking in Plattekloof
+                    </div>
+                    <p class="commenting-txt2"><b>School, </b> Plattekloof, Western Cape</p>
+                    <div class="d-flex">
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/State.svg') }}"
+                                alt="State" />
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                2 verifications
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/warning.svg') }}"
+                                alt="warning" />
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                1 dispute
+                            </div>
+                        </div>
+                    </div>
+                    <p class="commenting-txt4  mt-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem ipsum dolor
+                        sit
+                        met, consect... <a href="#"> See more</a>
+                    </p>
+                    <p class="commenting-txt2">
+                        #robbery #mall
+                    </p>
+                    <div>
+                        <img class="main-img" src="{{ url_for('static', path= 'img/main_img.png' )}}" alt="main-img" />
+                    </div>
+                    <div class="d-flex mt-3">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/visibility.svg') }}"
+                                alt="Eye" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            2409
+                        </div>
+                        <div class="ms-3">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}"
+                                alt="emotion1" />
+                        </div>
+                        <div class="m-emotion">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/angry.svg') }}"
+                                alt="emotion3" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            34
+                        </div>
+                        <div class="ms-3">
+                            <img class="ml-4" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}"
+                                alt="chat_bubble_outline" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            3
+                        </div>
+                    </div>
+                    <div class="line mt-3"></div>
+                    <div class="d-flex mt-3">
+                        <div class="d-flex">
+                            <div>
+                                <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar1.svg') }}"
+                                    alt="Avatar1" />
+                            </div>
+                            <div class="online mt-4"></div>
+                        </div>
+                        <div class="ms-3 w-100">
+                            <input type="text" class="commenting-input p-2 commenting-txt6"
+                                placeholder="What is on your mind?" onclick="showDiv()">
+                            <div class="d-flex mt-3 justify-content-between nextdiv" id="nextDiv">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label commenting-txt2 ms-2" for="flexCheckDefault">
+                                        I understand and accept the<br> <a href="#">commenting policy</a>.
+                                    </label>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-custom mx-3 btn-cancel">Cancel</button>
+                                    <button class="btn btn-custom send-btn">
+                                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/send.svg') }}"
+                                            alt="send" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 nextdiv" id="nextDiv2">
+                        <div class="d-flex">
+                            <div>
+                                <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar2.svg') }}"
+                                    alt="Avatar2" />
+                            </div>
+                            <div class="online mt-4"></div>
+                        </div>
+                        <div class="ms-3 w-100 comment-border p-2">
+                            <span class="commenting-txt1">
+                                Mphosiswe Nkosi &nbsp;
+                            </span>
+                            <span class="commenting-txt2">5m ago</span>
+                            <p class="commenting-txt2 mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem
+                                ipsum
+                                sit amet, consectetur adipiscing elit.
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <button class="btn btn-custom commenting-txt1 p-0">
+                                        Like
+                                    </button>
+                                    <button class="btn btn-custom ms-2 commenting-txt1 p-0">
+                                        Reply
+                                    </button>
+                                    <div class="ms-3">
+                                        <img class="mx-auto"
+                                            src="{{ url_for('static', path='img/svg/Ads/thumbsup.svg') }}"
+                                            alt="emotion2" />
+                                    </div>
+                                    <div class="m-emotion">
+                                        <img class="mx-auto"
+                                            src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}"
+                                            alt="emotion1" />
+                                    </div>
+                                    <div class="mx-1 commenting-txt5 mt-1">
+                                        13
+                                    </div>
+                                </div>
+                                <button class="btn btn-custom p-0">
+                                    <img class="mx-auto"
+                                        src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                                        alt="more-horiz" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line mt-3"></div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class="d-flex">
+                            <button class="d-flex btn btn-custom p-0" id="openVerifyModal" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle">
+                                <img src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}" alt="Verify" />
+                                <div class="mx-2 commenting-txt1">
+                                    Verify
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="openVerifyModal2">
+                                <img src="{{ url_for('static', path='img/svg/Ads/verified.svg') }}" alt="Verify" />
+                                <div class="mx-2 commenting-txt1 text-success fw-bold">
+                                    Verify
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/error_outline.svg') }}"
+                                    alt="Dispute" />
+                                <div class="mx-2 commenting-txt1">
+                                    Dispute
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0" id="Like" data-bs-toggle="modal"
+                                data-bs-target="#emotions">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}"
+                                    alt="Like" />
+                                <div class="mx-2 commenting-txt1">
+                                    Like
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="1thumbsUp">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Thumbs-up.svg') }}"
+                                    alt="Thumbs-up" />
+                                <div class="mx-2 commenting-txt1">
+                                    Thumbs-up
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="2redHeart">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Red Heart.svg') }}"
+                                    alt="Red Heart" />
+                                <div class="mx-2 commenting-txt1">
+                                    Red Heart
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="3grinningFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Grinning face.svg') }}"
+                                    alt="Grinning face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Grinning face
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="4hushedFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Hushed face.svg') }}"
+                                    alt="Hushed face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Hushed face
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="5poutingFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Pouting face.svg') }}"
+                                    alt="Pouting face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Pouting face
+                                </div>
+                            </button>
+                        </div>
+                        <button class="btn btn-custom p-0">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                                alt="more-horiz" />
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-color p-4 mb-4">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/Subtract.svg') }}"
+                                alt="Subtract" />
+                            <div class="mx-2 commenting-txt1">
+                                Crime
+                            </div>
+                        </div>
+                        <div class="txt-time">
+                            5m ago
+                        </div>
+                    </div>
+                    <div class="mt-3 txt-title">
+                        Home Robbery
+                    </div>
+                    <p class="commenting-txt2"><b>Work, </b> Belville, Western Cape</p>
+                    <div class="d-flex">
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/State.svg') }}"
+                                alt="State" />
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                4 verifications
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/warning.svg') }}"
+                                alt="warning" />
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                2 disputes
+                            </div>
+                        </div>
+                    </div>
+                    <p class="commenting-txt4  mt-3">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
+                    <audio controls>
+                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                            type="audio/mpeg" />
+                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.ogg"
+                            type="audio/ogg" />
+                        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.wav"
+                            type="audio/wav" />
+                        Audio not supported
+                    </audio>
+                    <div class="d-flex mt-3">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/visibility.svg') }}"
+                                alt="Eye" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            12
+                        </div>
+                        <div class="ms-3">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}"
+                                alt="emotion1" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            2
+                        </div>
+                        <div class="ms-3">
+                            <img class="ml-4" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}"
+                                alt="chat_bubble_outline" />
+                        </div>
+                        <div class="mx-1 commenting-txt5 mt-1">
+                            0
+                        </div>
+                    </div>
+                    <div class="line mt-3"></div>
+                    <div class="d-flex mt-3">
+                        <div class="d-flex">
+                            <div>
+                                <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar1.svg') }}"
+                                    alt="Avatar1" />
+                            </div>
+                            <div class="online mt-4"></div>
+                        </div>
+                        <div class="ms-3 w-100">
+                            <input type="text" class="commenting-input p-2 commenting-txt6"
+                                placeholder="What is on your mind?" onclick="showDiv()">
+                            <div class="d-flex mt-3 justify-content-between nextdiv" id="nextDiv">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label commenting-txt2 ms-2" for="flexCheckDefault">
+                                        I understand and accept the<br> <a href="#">commenting policy</a>.
+                                    </label>
+                                </div>
+                                <div class="d-flex">
+                                    <button class="btn btn-custom mx-3 btn-cancel">Cancel</button>
+                                    <button class="btn btn-custom send-btn">
+                                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/send.svg') }}"
+                                            alt="send" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3 nextdiv" id="nextDiv2">
+                        <div class="d-flex">
+                            <div>
+                                <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar2.svg') }}"
+                                    alt="Avatar2" />
+                            </div>
+                            <div class="online mt-4"></div>
+                        </div>
+                        <div class="ms-3 w-100 comment-border p-2">
+                            <span class="commenting-txt1">
+                                Mphosiswe Nkosi &nbsp;
+                            </span>
+                            <span class="commenting-txt2">5m ago</span>
+                            <p class="commenting-txt2 mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit vestibulum. Lorem
+                                ipsum
+                                sit amet, consectetur adipiscing elit.
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <button class="btn btn-custom commenting-txt1 p-0">
+                                        Like
+                                    </button>
+                                    <button class="btn btn-custom ms-2 commenting-txt1 p-0">
+                                        Reply
+                                    </button>
+                                    <div class="ms-3">
+                                        <img class="mx-auto"
+                                            src="{{ url_for('static', path='img/svg/Ads/thumbsup.svg') }}"
+                                            alt="emotion2" />
+                                    </div>
+                                    <div class="m-emotion">
+                                        <img class="mx-auto"
+                                            src="{{ url_for('static', path='img/svg/Ads/frightened.svg') }}"
+                                            alt="emotion1" />
+                                    </div>
+                                    <div class="mx-1 commenting-txt5 mt-1">
+                                        13
+                                    </div>
+                                </div>
+                                <button class="btn btn-custom p-0">
+                                    <img class="mx-auto"
+                                        src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                                        alt="more-horiz" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line mt-3"></div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class="d-flex">
+                            <button class="d-flex btn btn-custom p-0" id="openVerifyModal" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle">
+                                <img src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}" alt="Verify" />
+                                <div class="mx-2 commenting-txt1">
+                                    Verify
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="openVerifyModal2">
+                                <img src="{{ url_for('static', path='img/svg/Ads/verified.svg') }}" alt="Verify" />
+                                <div class="mx-2 commenting-txt1 text-success fw-bold">
+                                    Verify
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/error_outline.svg') }}"
+                                    alt="Dispute" />
+                                <div class="mx-2 commenting-txt1">
+                                    Dispute
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0" id="Like" data-bs-toggle="modal"
+                                data-bs-target="#emotions">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/notverified.svg') }}"
+                                    alt="Like" />
+                                <div class="mx-2 commenting-txt1">
+                                    Like
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="1thumbsUp">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Thumbs-up.svg') }}"
+                                    alt="Thumbs-up" />
+                                <div class="mx-2 commenting-txt1">
+                                    Thumbs-up
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="2redHeart">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Red Heart.svg') }}"
+                                    alt="Red Heart" />
+                                <div class="mx-2 commenting-txt1">
+                                    Red Heart
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="3grinningFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Grinning face.svg') }}"
+                                    alt="Grinning face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Grinning face
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="4hushedFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Hushed face.svg') }}"
+                                    alt="Hushed face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Hushed face
+                                </div>
+                            </button>
+                            <button class="d-flex btn btn-custom p-0 d-none" id="5poutingFace">
+                                <img class="ms-3" src="{{ url_for('static', path='img/svg/Ads/Pouting face.svg') }}"
+                                    alt="Pouting face" />
+                                <div class="mx-2 commenting-txt1">
+                                    Pouting face
+                                </div>
+                            </button>
+                        </div>
+                        <button class="btn btn-custom p-0">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}"
+                                alt="more-horiz" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-custom overflow-auto fixed-height d-none d-sm-block d-md-block d-lg-block d-xl-block">
+                <div style="overflow:hidden;height: 300px;width: 100%;" class="rounded-4">
+                    <div id="map"></div>
+                </div>
+                <div class="d-flex justify-content-center bg-color rounded-5 p-2 mt-3">
+                    <div class="commenting-txt1 mt-1">
+                        Last 7 days
+                    </div>
+                    <div>
+                        <img class="ms-2" src="{{ url_for('static', path='img/svg/Ads/downarrow.svg') }}"
+                            alt="downarrow" />
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    {% block highchart1 %}
+                    {% include "components/highchart.html" %}
+                    {% endblock %}
+                    {% block highchart2 %}
+                    {% include "components/highchart.html" %}
+                    {% endblock %}
+                </div>
+                <div class="row mt-4">
+                    {% block highchart3 %}
+                    {% include "components/highchart.html" %}
+                    {% endblock %}
+                    <div class="col-6">
+                        <img class="w-100 h-auto " src="{{ url_for('static', path='img/map_img2.png') }}" alt="map" />
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color p-2">
+                    <div class="modal-header border-0">
+                        <div class="d-flex">
+                            <div>
+                                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/State.svg') }}"
+                                    alt="State" />
+                            </div>
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                Verify
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0">
+                        <div class="commenting-input p-4" style="height: 250px;">
+                            <p class="txt-title text-center"> you confirm that you possess first-hand information
+                                regarding this incident that allows you to verify it?</p>
+                            <br>
+                            <p class="commenting-txt2 text-center"> that misuse of the verification feature may result
+                                in a
+                                ban, as we aim to prevent misinformation on this platform.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 flex-column">
+                        <button class="btn btn-primary w-100" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal" data-bs-dismiss="modal">Yes, continue
+                        </button>
+                        <button class="btn indigo-200 btn-secondary btn-custom w-100"
+                            data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">No,
+                            cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color p-2">
+                    <div class="modal-header border-0">
+                        <div class="d-flex">
+                            <div>
+                                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/State.svg') }}"
+                                    alt="State" />
+                            </div>
+                            <div class="mx-2 mt-1 commenting-txt3">
+                                Verify
+                            </div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body border-0">
+                        <textarea type="text" class="commenting-input p-2 commenting-txt6 input-area"
+                            placeholder="A comment is required to verify a pin" style="height: 250px;"></textarea>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label commenting-txt2 ms-1" for="flexCheckDefault">
+                                I understand and accept the&nbsp;&nbsp;<a href="#">commenting policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 justify-content-between">
+                        <button class="btn btn-custom send-btn" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal" data-bs-dismiss="modal">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/upload.svg') }}"
+                                alt="upload" />
+                        </button>
+                        <button class="btn btn-custom send-btn" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal" data-bs-dismiss="modal">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/send.svg') }}" alt="send"
+                                onclick="verify()" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="/dent_search" class="btn btn-custom pin-position d-none d-sm-block d-lg-block d-xl-block d-md-block">
+        <img class="mx-auto" src="{{ url_for('static', path='img/svg/pinbtn.svg') }}" />
+    </a>
+
+    {% block navbar %}
+    {% include "components/navbar.html" %}
+    {% endblock %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+    // Initialize the map
+    var map = L.map('map', {
+        zoomControl: false
+    }).setView([51.505, -0.09], 13);
+
+    // Add the dark-themed tile layer
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+    }).addTo(map);
+
+    var customIcon = L.icon({
+        iconUrl: `{{ url_for('static', path='img/svg/centerpoint.svg') }}`,
+        iconSize: [80, 80],
+    });
+
+    var customIcon2 = L.icon({
+        iconUrl: `{{ url_for('static', path='img/svg/point_2.svg') }}`,
+        iconSize: [50, 63],
+    });
+
+    map.attributionControl.remove();
+
+    var locations = [
+        { lat: 52.1, lng: -0.09 },
+        { lat: 52.0, lng: -0.1 },
+        { lat: 51.7, lng: -0.2 },
+        // Add more locations as needed
+    ];
+
+    var markers = [];
+
+    locations.forEach(function (location) {
+        var marker = L.marker([location.lat, location.lng], { icon: customIcon2 }).addTo(map).openPopup();
+        markers.push(marker);
+    });
+
+    var marker = L.marker([51.5, -0.09], { icon: customIcon }).addTo(map);
+    markers.push(marker);
+
+    var group = new L.featureGroup(markers);
+    map.fitBounds(group.getBounds());
+</script>
+<script>
+    function showDiv() {
+        var div = document.getElementById("nextDiv");
+        var div2 = document.getElementById("nextDiv2");
+        if (div.classList.contains('show')) {
+            div.classList.remove('show');
+        }
+        else div.classList.add('show');
+        if (div2.classList.contains('show')) {
+            div2.classList.remove('show');
+        }
+        else div2.classList.add('show');
+    }
+
+    function hide() {
+        var div = document.getElementById("nextDiv");
+        var div2 = document.getElementById("nextDiv2");
+        if (div.classList.contains('show')) {
+            div.classList.remove('show');
+        }
+        else div.classList.add('show');
+        if (div2.classList.contains('show')) {
+            div2.classList.remove('show');
+        }
+        else div2.classList.add('show');
+    }
+
+    function verify() {
+        var firstButton = document.getElementById('openVerifyModal');
+        var secondButton = document.getElementById('openVerifyModal2');
+
+        if (secondButton.classList.contains('d-none')) {
+            firstButton.classList.add('d-none');
+            secondButton.classList.remove('d-none');
+        }
+        else {
+            firstButton.classList.remove('d-none');
+            secondButton.classList.add('d-none');
+        }
+    }
+</script>
+
+{% endblock %}

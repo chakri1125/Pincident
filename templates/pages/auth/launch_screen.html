@@ -1,0 +1,72 @@
+{% extends "layout/index.html" %}
+
+{% block launchbackground %}
+    {% include "components/effects/launchBackground.html" %}
+{% endblock %}
+
+{% block title %}
+    <title>Pincidents - Launch Screen</title>
+{% endblock %}
+
+{% block content %}
+    <div class="mx-auto d-flex flex-column">
+
+        <main class="m-auto flex-fill d-flex flex-column">
+
+            <div class="login-form d-flex flex-column-reverse">
+                <div class="d-grid" href="/signin">
+                    <a href="/login" class="btn btn-secondary">
+                        <span class="text-charcoal-light fw-normal">Already have an account?</span>
+                        <span class="text-decoration-underline">Sign in</span>
+                    </a>
+                </div>
+
+                <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                    <div class="mb-6">
+                        <img src="{{ url_for('static', path='img/Logo.png') }}" alt="logo"
+                             class="d-block logo-image mx-auto mb-4"/>
+                        <img src="{{ url_for('static', path='img/svg/LogoText.svg') }}" alt="logo"
+                             class="d-block mx-auto"/>
+                    </div>
+
+                    <div class="mb-5">
+                        <div class="text-paragraph-semi text-dove-grey-dark text-center mb-3">Continue with</div>
+
+                        <div class="row gx-2">
+                            <div class="col">
+                                <button class="btn btn-charcoal btn-ads w-100">
+                                    <img src="{{ url_for('static', path='img/svg/Ads/Facebook.svg') }}"
+                                         alt="Facebook Ad"/>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-charcoal btn-ads w-100">
+                                    <img src="{{ url_for('static', path='img/svg/Ads/Google.svg') }}" alt="Google Ad"/>
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-charcoal btn-ads w-100">
+                                    <img src="{{ url_for('static', path='img/svg/Ads/Apple.svg') }}" alt="Apple Ad"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="text-paragraph-semi text-dove-grey-dark text-center mb-3">Or sign up</div>
+                        <div class="d-grid mb-3">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="d-grid">
+                            <a type="submit" class="btn btn-primary d-grid" href="/signup">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        {% include "layout/footer.html" %}
+    </div>
+{% endblock %}

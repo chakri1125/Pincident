@@ -1,0 +1,133 @@
+.logo-image {
+  width: 4.5rem;
+}
+
+.logo-text {
+  @extend .bg-gradient;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+/* Effects */
+.effect {
+  .ring {
+    position: fixed;
+    bottom: 40%;
+    left: 0;
+    transform: translate(-50%, 0);
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 100%;
+    background: $gradient;
+    --webkit-mask: radial-gradient(transparent 315px, #000 316px);
+    mask: radial-gradient(transparent 315px, #000 316px);
+  }
+
+  .semi-circle {
+    position: fixed;
+    bottom: -50px;
+    right: 30px;
+
+    width: 248px;
+    height: 124px;
+    background: $gradient;
+    border-radius: 9999px 9999px 0 0;
+  }
+
+  .dots {
+    position: fixed;
+    top: 40px;
+    right: 30px;
+  }
+
+  .wave {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+  }
+
+  .backgroundblur {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.country-circle {
+  width: 88px;
+  height: 54px;
+  background-color: var(--bs-backdrop-bg);
+  color: var(--bs-white);
+  border-radius: 8px;
+  border-color: var(--bs-circle-border-dark) !important;
+  border-width: 2px !important;
+}
+
+.country-select {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 65px;
+  background-color: var(--bs-backdrop-bg);
+  color: var(--bs-white);
+  border: none;
+}
+
+.country-kenya {
+  background-image: url("/static/img/kenya.png");
+}
+
+.phone-number-circle {
+  margin-left: 10px;
+  width: 71%;
+  height: 54px;
+  background-color: var(--bs-backdrop-bg);
+  color: var(--bs-white);
+  border-radius: 8px;
+  border-color: var(--bs-circle-border-dark) !important;
+  border-width: 2px !important;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.height-54 {
+  height: 54px;
+}
+
+.logo-other {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+}
+
+.width-59 {
+  width: 59px;
+}
+
+.height-88 {
+  height: 88px;
+}
+
+.resend-opt {
+  color: var(--bs-dove-grey-dark);
+  font-size: 14px;
+}
+
+.margin-left--15 {
+  margin-left: -15px;
+}
+
+// header
+
+.header-txt {
+  font-family: 'Poppins';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+}

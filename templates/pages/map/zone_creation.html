@@ -1,0 +1,227 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="dent-search rounded-4">
+    <div style="overflow:hidden;height: 100%;width: 100%;">
+        <div id="map2">
+            <div class="sticky-top bg-color h-50 p-2">
+                <div
+                    class="d-flex justify-content-between mx-2 mt-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+                    <div class="notifications-title">
+                        Create zone
+                    </div>
+                    <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" class="img-size mt-2" alt="close">
+                </div>
+                <div class="search-txt0 searchbar-width mx-auto">
+                    Specify location
+                </div>
+                <div class="input-with-icon bg-color2 searchbar-width mx-auto mt-3 rounded-3">
+                    <input type="text" id="search-input" class="search-input p-3 search-txt1" placeholder=""
+                        onkeydown="handleKeyDown(event)" onclick="showDropdown()">
+                    <button class="mx-2 btn-custom icon btn p-0 close" id="close" onclick="removeInput()">
+                        <img src="{{ url_for('static', path='img/svg/Ads/searchclose.svg') }}" alt="close">
+                    </button>
+                </div>
+                <div id="dropdown1" class="searchbar-width mx-auto bg-color3 p-4 rounded-3 mt-2 dropdown1 flex-column">
+                    <div class="btn btn-custom p-0 d-flex mt-3 justify-content-between" onclick="setInputValue(1)">
+                        <div class="d-flex">
+                            <div class="d-flex flex-column">
+                                <img src="{{ url_for('static', path='img/svg/Ads/search/point.svg') }}" alt="close">
+                                <div class="search-txt2 mt-1">27km</div>
+                            </div>
+                            <div class="ms-2 mt-1">
+                                <div class="search-txt3">
+                                    7 Victoria Walk
+                                </div>
+                                <div class="search-txt4">
+                                    Durbanville, Cape Town, South Africa
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', path='img/svg/Ads/search/view.svg') }}" alt="view">
+                    </div>
+                    <div class="search-line mt-3"></div>
+                    <div class="btn btn-custom p-0 d-flex mt-3 justify-content-between" onclick="setInputValue(2)">
+                        <div class="d-flex">
+                            <div class="d-flex flex-column">
+                                <img src="{{ url_for('static', path='img/svg/Ads/search/point.svg') }}" alt="close">
+                                <div class="search-txt2 mt-1">44km</div>
+                            </div>
+                            <div class="ms-2 mt-1">
+                                <div class="search-txt3">
+                                    7 Victoria Walk
+                                </div>
+                                <div class="search-txt4">
+                                    Bellville, Cape Town, South Africa
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', path='img/svg/Ads/search/view.svg') }}" alt="view">
+                    </div>
+                    <div class="search-line mt-3"></div>
+                    <div class="btn btn-custom p-0 d-flex mt-3 justify-content-between" onclick="setInputValue(3)">
+                        <div class="d-flex">
+                            <div class="d-flex flex-column">
+                                <img src="{{ url_for('static', path='img/svg/Ads/search/point.svg') }}" alt="close">
+                                <div class="search-txt2 mt-1">187km</div>
+                            </div>
+                            <div class="ms-2 mt-1">
+                                <div class="search-txt3">
+                                    7 Victoria Walk
+                                </div>
+                                <div class="search-txt4">
+                                    Knysna, Western Cape, South Africa
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{{ url_for('static', path='img/svg/Ads/search/view.svg') }}" alt="view">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="bg-bottom h-50 sticky-bottom">
+                <a class="d-grid gap-3 map-btn1-position map-btn1 map-btn" href="/dent_detail" id="map-btn">
+                    <input class="slider w-100 mt-3" type="range" value="50" max="100" min="1" oninput="this.nextElementSibling.value = this.value">
+                    <button type="button" class="btn btn-primary map-btn1">Continue</button>
+                </a>
+            </div> -->
+            <div class="bg-bottom h-50 sticky-bottom">
+                <div class="d-grid gap-3 map-btn map-btn1-position d-flex" id="map-btn">
+                    <input class="slider w-100 " type="range" value="50" max="100" min="1" oninput="this.nextElementSibling.value = this.value">
+                    <a class="" href="/dent_detail"><button type="button" class="btn btn-primary map-btn1">Continue</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+    // Initialize the map
+    var map = L.map('map2', {
+        zoomControl: false
+    }).setView([51.505, -0.09], 22);
+
+    // Add the dark-themed tile layer
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+    }).addTo(map);
+
+    map.attributionControl.remove();
+
+    function handleKeyDown(e) {
+        if (e.keyCode == 13) {
+            searchLocation();
+            hideDropdown();
+        }
+    }
+
+    function setInputValue(number) {
+        var searchInput = '';
+        if (number == 1) { searchInput = 'Durbanville, Cape Town, South Africa'; }
+        else if (number == 2) { searchInput = 'Bellville, Cape Town, South Africa'; }
+        else if (number == 3) { searchInput = 'Knysna, Western Cape, South Africa'; }
+
+        var geocoder = L.Control.Geocoder.nominatim();
+        geocoder.geocode(searchInput, function (results) {
+            if (results && results.length > 0) {
+                var latLng = results[0].center;
+                map.setView(latLng, 13);
+
+                var customIcon = L.icon({
+                    iconUrl: `{{ url_for('static', path='img/svg/centerpoint.svg') }}`,
+                    iconSize: [80, 80],
+                });
+
+                L.marker(latLng, { icon: customIcon }).addTo(map)
+                    .bindPopup(results[0].name)
+                    .openPopup();
+            } else {
+                alert('Location not found');
+            }
+        });
+
+        hideDropdown();
+        document.getElementById('search-input').value = searchInput;
+        showButton();
+    }
+
+    // Function to search location
+    function searchLocation() {
+        var searchInput = document.getElementById('search-input').value;
+        if (searchInput) {
+            var geocoder = L.Control.Geocoder.nominatim();
+            geocoder.geocode(searchInput, function (results) {
+                if (results && results.length > 0) {
+                    var latLng = results[0].center;
+                    map.setView(latLng, 13);
+
+                    var customIcon = L.icon({
+                        iconUrl: `{{ url_for('static', path='img/svg/centerpoint.svg') }}`,
+                        iconSize: [80, 80],
+                    });
+
+                    L.marker(latLng, { icon: customIcon }).addTo(map)
+                        .bindPopup(results[0].name)
+                        .openPopup();
+                } else {
+                    alert('Location not found');
+                }
+            });
+            showButton();
+        }
+    }
+
+    function removeInput() {
+        document.getElementById('search-input').value = '';
+        hideDropdown();
+    }
+
+    function showDropdown() {
+        var div = document.getElementById("dropdown1");
+        var div2 = document.getElementById("close");
+        if (div.classList.contains('show')) {
+            div.classList.remove('show');
+        }
+        else div.classList.add('show');
+
+        if (div2.classList.contains('show')) {
+            div2.classList.remove('show');
+        }
+        else div2.classList.add('show');
+    }
+
+    function hideDropdown() {
+        var div = document.getElementById("dropdown1");
+        var div2 = document.getElementById("close");
+        if (div.classList.contains('show')) {
+            div.classList.remove('show');
+        }
+
+        if (div2.classList.contains('show')) {
+            div2.classList.remove('show');
+        }
+    }
+
+    function showButton() {
+        var div = document.getElementById("map-btn");
+        div.classList.add('show');
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - SSO</title>
+{% endblock %}
+
+{% block launchbackground %}
+{% include "components/effects/launchBackground.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto d-flex flex-column">
+
+    <main class="m-auto flex-fill d-flex flex-column">
+
+        <div class="login-form d-flex flex-column-reverse">
+            <div class="d-grid gap-3" href="/signin">
+                <button type="button" class="btn btn-primary">Continue as Steve Bannon</button>
+                <a href="/sso_prev" class="btn btn-secondary">No, don't continue</a>
+            </div>
+
+            <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                <div class="mb-5">
+                    <div class="d-grid margin-top-50 margin-bottom-50">
+                        <div class="mx-auto">
+                            <div class="avatar-wrapper1">
+                                <img src="{{ url_for('static', path='img/svg/avatar_ring.svg') }}" class="avatar-img1"
+                                    alt="Avatar" />
+                            </div>
+                            <div class="avatar-ring1">
+                                <div class="avatar-in1">
+                                    <div class="avatar-in2 overflow-hidden">
+                                        <img src="{{ url_for('static', path='img/Ellipse 34.jpg') }}" class="avatar-img"
+                                            alt="Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-1">
+                        <span class="text-medium-title text-white text-center">Steve Bannon</span>
+                        <span class="text-paragraph-regular text-dove-grey text-center">stevebannon@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    {% include "layout/footer.html" %}
+</div>
+{% endblock %}

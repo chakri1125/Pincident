@@ -1,0 +1,101 @@
+{% block title %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="col-6">
+    <div class="bg-color p-3">
+        <div class="d-flex">
+            <div>
+                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/Subtract.svg') }}" alt="Subtract" />
+            </div>
+            <div class="mx-2 commenting-txt1 mt-1">
+                Crime
+            </div>
+        </div>
+        <div class="line2 mt-3"></div>
+        <div class="card-number mt-3">
+            23
+        </div>
+        <div id="container1" class="highcharts1"></div>
+        <div class="d-flex mt-3">
+            <button class="btn-custom">
+                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/arrowup.svg') }}" alt="Arrowup" />
+            </button>
+            <div class="mx-2 commenting-txt1 mt-1">
+                Up 12.5%  <span class="commenting-txt2"> since a week ago</span>
+            </div>
+        </div>
+        <div class="mx-2 mt-3">
+           <span class="commenting-txt2"> Most affected zone: </span><span class="commenting-txt1"> Home</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        Highcharts.chart('container1', {
+            chart: {
+                type: 'column',
+                backgroundColor: 'transparent',
+                height: 30,
+                spacing: [0, 0, 0, 0]
+            },
+            title: {
+                text: null
+            },
+            xAxis: {
+                gridLineWidth: 0,
+                visible: false
+            },
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    enabled: false
+                },
+                gridLineWidth: 0
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    },
+                    pointWidth: 30,
+                    pointPadding: 0.1,
+                    borderRadius: 2,
+                    borderColor: null
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                enabled: false
+            },
+            series: [{
+                name: 'BPL',
+                data: [3, 5, 1, 2, 3, 1,1],
+                dataLabels: {
+                    enabled: false
+                },  
+                color: '#A3A4A9'
+            }, {
+                name: 'FA Cup',
+                data: [14, 8, 8, 8, 6, 13, 12],
+                dataLabels: {
+                    enabled: false
+                },
+                color: '#6464FF'
+            }]
+        });
+    });
+</script>
+{% endblock %}

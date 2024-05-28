@@ -1,0 +1,71 @@
+// Color System
+$blue-accent:     #6464FF;
+$blue-dark:       #5050CC;
+$blue-light:      #9292FF;
+
+$purple-accent:   #9A5BFF;
+$purple-dark:     #7B49CC;
+$purple-light:    #B88CFF;
+
+$orange-accent:   #FC7962;
+$orange-dark:     #CA614E;
+$orange-light:    #FDA191;
+
+$red-accent:      #F84B60;
+$red-dark:        #BD3242;
+$red-light:       #F27887;
+
+$yellow-accent:   #FFB84D;
+$yellow-dark:     #CC933E;
+$yellow-light:    #FFCD82;
+
+$green-accent:    #4BD883;
+$green-dark:      #3CAD69;
+$green-light:     #81E4A8;
+
+$dove-grey:       #ECEEF6;
+$dove-grey-dark:  #A3A4A9;
+$dove-gray-light: #F7F7FC;
+
+$charcoal:        #2D2E32;
+$charcoal-dark:   #232428;
+$charcoal-light:  #5B5D67;
+
+$midnight:        #151519;
+$midnight-dark:   #131315;
+$midnight-light:  #2E2F34;
+
+$primary:         $blue-accent;
+$secondary:       $midnight;
+
+$gradient:        linear-gradient(90deg, #6464FF, #F27887);
+$gradient-grey:   linear-gradient(90deg, #2D2E32, #202125);
+
+
+// Font Size System
+$font-family-sans-serif:  Poppins;
+$font-size-base:          1rem; // Assumes the browser default, typically `16px`
+$font-size-large-title:   $font-size-base * 2.250;
+$font-size-medium-title:  $font-size-base * 1.500;
+$font-size-small-title:   $font-size-base * 1.000;
+$font-size-paragraph:     $font-size-base * 0.875;
+$font-size-sub-text:      $font-size-base * 0.750;
+
+// Border
+$border-radius:           0.5rem;
+
+// Input
+$input-color:             $dove-gray-light;
+$input-border-width:      2px;
+$input-border-color:      $charcoal-light;
+$input-font-size:         $font-size-paragraph;
+$input-btn-padding-x:     1rem;
+$input-btn-padding-y:     1rem;
+
+// Body
+$body-bg:                 $midnight;
+$body-color:              $dove-gray-light;
+
+// Button
+$btn-font-weight:         600;
+$input-btn-font-size:     $font-size-paragraph;

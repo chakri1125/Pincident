@@ -1,0 +1,231 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="d-flex flex-column mx-auto w-100">
+    <header class='container sticky-top'>
+        <div
+            class="d-flex justify-content-between mx-2 mt-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+            <div class="header-txt">
+                My family & friends
+            </div>
+            <div class="d-flex align-items-center">
+                <button class="mx-2 btn-custom">
+                    <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/search.svg') }}" alt="search" />
+                </button>
+                <button class="mx-2 btn-custom">
+                    <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/filter-alt.svg') }}"
+                        alt="filter-alt" />
+                </button>
+                <button class="mx-2 btn-custom">
+                    <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/notification.svg') }}"
+                        alt="notification" />
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container global-search mt-3">
+        <div class="d-flex justify-content-between">
+            <div class="family-txt1 pt-3">
+                8 users
+            </div>
+            <div class="d-none d-sm-block d-lg-block d-xl-block d-md-block">
+                <a type="submit" href="/invitesearch" class="btn btn-primary family-btn">Invite</a>
+            </div>
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar1.svg') }}" alt="Avatar1" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar2.svg') }}" alt="Avatar2" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        Susan Jones Wellington
+                    </div>
+                    <div class="search-txt4">
+                        32 Hoover Close, Bellville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar3.svg') }}" alt="Avatar3" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar4.svg') }}" alt="Avatar4" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar3.svg') }}" alt="Avatar5" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar1.svg') }}" alt="Avatar1" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar2.svg') }}" alt="Avatar1" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar3.svg') }}" alt="Avatar1" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="search-line mt-3"></div>
+        <div class="d-flex mt-3 justify-content-between">
+            <div class="d-flex">
+                <div class="d-flex">
+                    <div>
+                        <img class="avatar1" src="{{ url_for('static', path='img/svg/Avatar4.svg') }}" alt="Avatar1" />
+                    </div>
+                    <div class="online mt-4"></div>
+                </div>
+                <div class="ms-2">
+                    <div class="search-txt3">
+                        John Wellington
+                    </div>
+                    <div class="search-txt4">
+                        12, Laurie St, Durbanville, Western Cape...
+                    </div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='img/svg/Ads/more_horiz.svg') }}" alt="view">
+        </div>
+        <div class="sticky-bottom d-sm-none d-lg-none d-xl-none d-md-none pt-3 pb-3 ps-2 pe-2">
+            <a href="/invitesearch" class="btn btn-primary d-grid">Invite</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+$custom-colors: (
+  "blue-accent":    $blue-accent,
+  "blue-dark":      $blue-dark,
+  "blue-light":     $blue-light,
+
+  "purple-accent":  $purple-accent,
+  "purple-dark":    $purple-dark,
+  "purple-light":   $purple-light,
+
+  "orange-accent":  $orange-accent,
+  "orange-dark":    $orange-dark,
+  "orange-light":   $orange-light,
+
+  "red-accent":     $red-accent,
+  "red-dark":       $red-dark,
+  "red-light":      $red-light,
+
+  "yellow-accent":  $yellow-accent,
+  "yellow-dark":    $yellow-dark,
+  "yellow-light":   $yellow-light,
+
+  "green-accent":   $green-accent,
+  "green-dark":     $green-dark,
+  "green-light":    $green-light,
+
+  "dove-grey":      $dove-grey,
+  "dove-grey-dark": $dove-grey-dark,
+  "dove-gray-light":$dove-gray-light,
+
+  "charcoal":       $charcoal,
+  "charcoal-dark":  $charcoal-dark,
+  "charcoal-light": $charcoal-light,
+
+  "midnight":       $midnight,
+  "midnight-dark":  $midnight-dark,
+  "midnight-light": $midnight-light
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$custom-spacers: (
+  6: $spacer * 4
+);
+$spacers: map-merge($spacers, $custom-spacers);

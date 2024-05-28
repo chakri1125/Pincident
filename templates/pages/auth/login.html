@@ -1,0 +1,44 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+    <title>Pincidents - Launch Screen</title>
+{% endblock %}
+
+{% block content %}
+    <div class="mx-auto d-flex flex-column">
+        <main class="m-auto flex-fill d-flex flex-column">
+            <div class="login-form d-flex flex-column-reverse">
+                <div class="d-grid mt-5" href="launch_screen">
+                    <a href="/forget_password" class="btn btn-secondary">
+                        <span class="text-charcoal-light fw-normal">Forgot your password?</span>
+                        <span class="text-decoration-underline">Reset it</span>
+                    </a>
+                </div>
+                <div class="d-grid" href="/launch_screen">
+                    <a href="/signup" class="btn btn-secondary">Back to Sign Up</a>
+                </div>
+                <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                    <div class="mb-6">
+                        <img src="{{ url_for('static', path='img/Logo.png') }}" alt="logo"
+                             class="d-block logo-image mx-auto mb-4"/>
+                        <img src="{{ url_for('static', path='img/svg/LogoText.svg') }}" alt="logo"
+                             class="d-block mx-auto"/>
+                    </div>
+                    <div>
+                        <div class="d-grid mb-3">
+                            <input type="email" class="form-control" placeholder="Email address">
+                        </div>
+                        <div class="d-grid mb-3">
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="d-grid">
+                            <a class="btn btn-primary d-grid" href="/welcome_screen_first">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        {% include "layout/footer.html" %}
+    </div>
+{% endblock %}

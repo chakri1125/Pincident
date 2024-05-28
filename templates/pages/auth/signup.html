@@ -1,0 +1,83 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - SSO Preview</title>
+{% endblock %}
+
+{% block logo %}
+    {% include "components/effects/logo.html" %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+    crossorigin="anonymous"></script>
+
+<div class="mx-auto d-flex flex-column">
+
+    <main class="m-auto flex-fill d-flex flex-column">
+
+        <div class="login-form d-flex flex-column-reverse">
+            <div class="d-grid gap-3">
+                <a href="/sso" class="btn btn-primary">Continue</a>
+                <a href="/launch_screen" class="btn btn-secondary">Cancel</a>
+            </div>
+
+            <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                <div class="mb-5">
+                    <div class="d-grid margin-bottom-30">
+                        <img class="mx-auto" src="{{ url_for('static', path='img/svg/Account.svg') }}" alt="Account" />
+                    </div>
+                    <div class="d-grid gap-1">
+                        <span class="text-medium-title text-white text-center">Sign up</span>
+                        <span class="text-paragraph-regular text-dove-grey text-center mb-3">Tell us about you to get
+                            started</span>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="d-grid mb-3">
+                        <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="border country-circle">
+                            <!-- <select class="country-select selectpicker countrypicker" data-flag="true" name="planCode"
+                                hx-target='#rental-id' hx-indicator=".htmx-indicator">
+                                <option class="fib fib-gr" value="A"><div class="fi fi-gr"></div></option>
+                            </select> -->
+                            <div class="dropdown btn">
+                                <div class="dropdown-toggle" data-bs-toggle="dropdown">
+                                    <span class="fi fi-us"></span>
+                                </div>
+                                <ul class="dropdown-menu width-10">
+                                    <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                    <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                    <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                    <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                    <li class="dropdown-tiem"><span class="fi fi-us"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="margin-left-10">
+                            <input type="text" class="form-control height-54" placeholder="+27 83 772 8933"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="d-grid mb-3">
+                        <input type="password" class="form-control" placeholder="Confirm password">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    {% include "layout/footer.html" %}
+</div>
+{% endblock %}

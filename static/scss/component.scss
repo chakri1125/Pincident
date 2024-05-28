@@ -1,0 +1,18 @@
+.btn {
+  &.btn-primary {
+    &, &:hover, &:active {
+      color: white !important;
+    }
+  }
+
+  &.btn-secondary {
+    &, &:hover, &:active {
+      color: $dove-grey-dark !important;
+    }
+  }
+
+  &.btn-ads {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}

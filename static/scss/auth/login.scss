@@ -1,0 +1,10 @@
+.login-form {
+  margin: auto;
+  padding: 1rem;
+  width: 368px;
+
+  @media(max-width: map-get($grid-breakpoints, 'sm')) {
+    width: 100vw;
+    height: 100%;
+  }
+}

@@ -1,0 +1,191 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="dent-search rounded-4">
+    <div class="fixed-height overflow-auto">
+        <div style="overflow:hidden;height: 30%;width: 100%;">
+            <div id="map3" class="h-100">
+                <div class="sticky-top bg-color h-50 p-2">
+                    <div
+                        class="d-flex justify-content-between mx-2 mt-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+                        <div class="notifications-title">
+                            Dent details
+                        </div>
+                        <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" class="img-size mt-2"
+                            alt="close">
+                    </div>
+                </div>
+                <div class="bg-bottom h-50 sticky-bottom">
+                    <a class="d-grid gap-3 map-btn1-position map-btn1 map-btn" href="/dent_detail" id="map-btn">
+                        <button type="button" class="btn btn-primary map-btn1">Continue</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="dent-detail-width mx-auto p-3">
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Title">
+            </div>
+            <div class="d-grid mb-3">
+                <textarea type="text" class="form-control" placeholder="Description"></textarea>
+            </div>
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Date">
+            </div>
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Time">
+            </div>
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Category">
+            </div>
+            <div class="d-grid mb-3">
+                <input type="text" class="form-control" placeholder="Tags">
+            </div>
+            <div class="dent-detail-txt">
+                Suggested tags
+            </div>
+            <div class="dent-detail-txt2 btn btn-custom btn-town p-1 mt-2">
+                #capetown
+            </div>
+        </div>
+    </div>
+    <div class="mt-5 d-none d-xl-block d-sm-block d-md-block d-lg-block">
+        <div class="d-flex justify-content-between sticky-bottom w-90 mx-auto">
+            <button class="btn btn-custom send-btn">
+                <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/upload.svg') }}" alt="upload" />
+            </button>
+            <a class="d-grid gap-3 map-btn1">
+                <button type="button" class="btn btn-primary map-btn1" data-bs-toggle="modal"
+                    data-bs-target="#exampleModalToggle">Continue</button>
+            </a>
+        </div>
+    </div>
+    <div class="mt-5 d-block d-lg-none d-md-none d-sm-none d-xl-none">
+        <div class="d-flex justify-content-between sticky-bottom w-90 mx-auto">
+            <div class="d-flex">
+                <button class="btn btn-custom send-btn">
+                    <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/camera.svg') }}" alt="camera" />
+                </button>
+                <button class="btn btn-custom send-btn ms-2">
+                    <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/upload.svg') }}" alt="upload" />
+                </button>
+            </div>
+            <button class="btn btn-custom send-btn" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                <img class=" mx-auto" src="{{ url_for('static', path='img/svg/Ads/send.svg') }}" alt="send" />
+            </button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-color p-2">
+                <div class="modal-header border-0">
+                    <div class="d-flex">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/modal-user.svg') }}"
+                                alt="State" />
+                        </div>
+                        <div class="mx-2 modal-txt1">
+                            Post dent as
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body border-0">
+                    <div class="btn btn-custom d-flex btn-town p-3 rounded-3">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/modal-avatar1.svg') }}"
+                                alt="upload" />
+                        </div>
+                        <div class="ms-2">
+                            <div class="modal-txt2">
+                                Eric
+                            </div>
+                            <div class="modal-txt3">
+                                Yourself
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-custom d-flex btn-town p-3 rounded-3 mt-2">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/modal-avatar2.svg') }}"
+                                alt="upload" />
+                        </div>
+                        <div class="ms-2">
+                            <div class="modal-txt2">
+                                u/jumpyneighbor
+                            </div>
+                            <div class="modal-txt3">
+                                Your avatar
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-custom d-flex btn-town p-3 rounded-3 mt-2">
+                        <div>
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/modal-avatar3.svg') }}"
+                                alt="upload" />
+                        </div>
+                        <div class="ms-2">
+                            <div class="modal-txt2">
+                                Anonymous
+                            </div>
+                            <div class="modal-txt3">
+                                Your identity will remain hidden
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label modal-txt3 ms-1" for="flexCheckDefault">
+                            I understand and accept the&nbsp;&nbsp;<a href="#">commenting policy</a>.
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer border-0">
+                    <a class="d-grid gap-3 w-100">
+                        <button type="button" class="btn btn-primary w-100">Continue</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script>
+    var map = L.map('map3', {
+        zoomControl: false
+    }).setView([51.505, -0.09], 13);
+
+    // Add the dark-themed tile layer
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+        maxZoom: 18,
+    }).addTo(map);
+
+    var customIcon = L.icon({
+        iconUrl: `{{ url_for('static', path='img/svg/centerpoint.svg') }}`,
+        iconSize: [80, 80],
+    });
+
+    map.attributionControl.remove();
+
+    var marker = L.marker([51.5, -0.09], { icon: customIcon }).addTo(map);
+</script>
+
+{% endblock %}

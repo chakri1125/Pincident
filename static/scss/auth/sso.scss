@@ -1,0 +1,24 @@
+.avatar-wrapper {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+
+  filter: blur(60px);
+
+  border-radius: 100%;
+  background: $gradient;
+  --webkit-mask: radial-gradient(transparent 48px, #000 69px, transparent 90px);
+  mask: radial-gradient(transparent 48px, #000 69px, transparent 90px);
+}
+
+.avatar-ring {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  margin: 25px;
+
+  border-radius: 100%;
+  background: $gradient;
+  --webkit-mask: radial-gradient(transparent 62px, #000 64px);
+  mask: radial-gradient(transparent 62px, #000 64px);
+}

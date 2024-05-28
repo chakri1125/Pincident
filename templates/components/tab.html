@@ -1,0 +1,23 @@
+<div class="tab-container m-0">
+    <button class="tab-button active" onclick="moveLine(this)">Feed</button>
+    <button class="tab-button" onclick="moveLine(this)">Trends</button>
+    <div class="tabline"></div>
+</div>
+<script>
+    function moveLine(button) {
+        var tabButtons = document.querySelectorAll('.tab-button');
+        var line = document.querySelector('.tabline');
+
+        tabButtons.forEach(function (tabButton) {
+            tabButton.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        var activeButtonRect = button.getBoundingClientRect();
+        var containerRect = button.parentNode.getBoundingClientRect();
+        var offsetLeft = activeButtonRect.left - containerRect.left;
+
+        line.style.transform = 'translateX(' + offsetLeft + 'px)';
+    }
+</script>

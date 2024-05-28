@@ -1,0 +1,48 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+    <title>Pincidents - SSO Preview</title>
+{% endblock %}
+
+{% block content %}
+    <div class="mx-auto d-flex flex-column">
+
+        <main class="m-auto flex-fill d-flex flex-column">
+
+            <div class="login-form d-flex flex-column-reverse">
+                <div class="d-grid gap-3">
+                    <a href="/email_verify" class="btn btn-primary">Continue</a>
+                    <a href="/launch_screen" class="btn btn-secondary">Back</a>
+                </div>
+
+                <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                    <div class="mb-5">
+                        <div class="d-grid margin-bottom-30">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Phone.svg') }}" alt="Phone"/>
+                        </div>
+                        <div class="d-grid gap-1">
+                            <span class="text-medium-title text-white text-center">Add mobile number</span>
+                            <span class="text-paragraph-regular text-dove-grey text-center">We require our users to link a valid mobile number to their Pincidents account. This helps us verify that users are real individuals and it helps us keep your account secure.</span>
+                        </div>
+                        <div class="d-flex mt-5">
+                            <div class="border country-circle">
+                                <select class="country-select" name="planCode" hx-target='#rental-id' hx-indicator=".htmx-indicator">
+                                    <option class="country-kenya" value="A">aaa</option>
+                                    <option value=“B”>Plan B</option>
+                                    <option value=“C”>Plan C</option>
+                                </select>
+                            </div>
+                            <div class="margin-left-10">
+                                <input type="text" class="form-control height-54" placeholder="+27 83 772 8933" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        {% include "layout/footer.html" %}
+    </div>
+{% endblock %}

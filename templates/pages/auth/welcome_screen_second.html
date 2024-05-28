@@ -1,0 +1,40 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+    <title>Pincidents - SSO Preview</title>
+{% endblock %}
+
+{% block logo %}
+    {% include "components/effects/logo.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="mx-auto d-flex flex-column">
+
+        <main class="m-auto flex-fill d-flex flex-column">
+
+            <div class="login-form d-flex flex-column-reverse">
+                <div class="d-grid gap-3">
+                    <a href="/welcome_screen_second" class="btn btn-primary">Continue</a>
+                    <a class="btn btn-secondary">Skip</a>
+                </div>
+
+                <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                    <div class="mb-5">
+                        <div class="d-grid margin-bottom-30 margin-left--15">
+                            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Welcome2.svg') }}" alt="Phone"/>
+                        </div>
+                        <div class="d-grid gap-1">
+                            <span class="text-medium-title text-white text-center">Let others know when something happens</span>
+                            <span class="text-paragraph-regular text-dove-grey text-center">Help contribute to the community on Pincidents by adding your own dents for incidents and events.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        {% include "layout/footer.html" %}
+    </div>
+{% endblock %}

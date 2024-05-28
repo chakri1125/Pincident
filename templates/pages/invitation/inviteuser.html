@@ -1,0 +1,55 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Profile</title>
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto d-flex flex-column">
+
+    <main class="m-auto flex-fill d-flex flex-column">
+
+        <div class="login-form d-flex flex-column bg-color3 rounded-3">
+            <div
+                class="d-flex justify-content-between mx-2 mb-2 mt-xl-4 mt-lg-4 mt-md-4 mt-sm-4 mb-xl-4 mb-lg-4 mb-md-4 mb-sm-4">
+                <div class="header-txt1">
+                    Invite user
+                </div>
+                <div class="d-flex align-items-center">
+                    <button class="mx-2 btn-custom">
+                        <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" alt="close">
+                    </button>
+                </div>
+            </div>
+            <div class="flex-fill d-flex flex-column justify-content-center mb-3">
+                <div class="mb-5">
+                    <div class="d-grid margin-bottom-50">
+                        <div class="mx-auto">
+                            <div class="avatar-wrapper1">
+                                <img src="{{ url_for('static', path='img/svg/avatar_ring.svg') }}" class="avatar-img1"
+                                    alt="Avatar" />
+                            </div>
+                            <div class="avatar-ring1">
+                                <div class="avatar-in1">
+                                    <div class="avatar-in2 overflow-hidden">
+                                        <img src="{{ url_for('static', path='img/Ellipse 34.jpg') }}" class="avatar-img"
+                                            alt="Avatar" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-1">
+                        <span class="text-medium-title text-white text-center">Steve Bannon</span>
+                        <span class="text-paragraph-regular text-dove-grey text-center">Joined August 2022<br>203 pins</span>
+                    </div>
+                </div>
+            </div>
+            <a class="d-grid gap-3" href="/invitesent">
+                <button type="button" class="btn btn-primary">Invite</button>
+            </a>
+        </div>
+
+    </main>
+</div>
+{% endblock %}

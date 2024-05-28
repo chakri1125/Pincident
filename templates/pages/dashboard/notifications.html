@@ -1,0 +1,146 @@
+{% extends "layout/index.html" %}
+
+{% block title %}
+<title>Pincidents - Dashboard</title>
+{% endblock %}
+
+{% block content %}
+
+{% block sidebar %}
+{% include "components/sidebar.html" %}
+{% endblock %}
+
+<div class="notifications rounded-4 p-4">
+    <div class="overflow-auto notifications-height">
+        <div class="d-flex justify-content-between sticky-top mb-4 bg-color2">
+            <div class="notifications-title">
+                Notifications
+            </div>
+                <img src="{{ url_for('static', path='img/svg/Ads/close.svg') }}" alt="close">
+        </div>
+        <div class="notifications-txt1 mt-3">
+            TODAY
+        </div>
+        <div class="notifications-line mt-3"></div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Alexandra Saunders</b> and 3 others commented on your post
+                </div>
+                <div class="notifications-txt3">
+                    5 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Johan Scholtz</b> and 65 others reacted to your post
+                </div>
+                <div class="notifications-txt3">
+                    15 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/verified2.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    Your post has been verified by 3 users and disputed by 1 user
+                </div>
+                <div class="notifications-txt3">
+                    32 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/warning2.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    Your post has been removed by a moderator
+                </div>
+                <div class="notifications-txt3">
+                    55 min ago
+                </div>
+            </div>
+        </div>
+        <div class="notifications-txt1 mt-3">
+            YESTERDAY
+        </div>
+        <div class="notifications-line mt-3"></div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Wikus le Roux</b> and 22 others reacted to your post
+                </div>
+                <div class="notifications-txt3">
+                    Yesterday, 12:05
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Peter Brown</b> and 7 others commented on your post
+                </div>
+                <div class="notifications-txt3">
+                    Yesterday, 14:35
+                </div>
+            </div>
+        </div>
+        <div class="notifications-txt1 mt-3">
+            12 APRIL 2022
+        </div>
+        <div class="notifications-line mt-3"></div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Alexandra Saunders</b> and 3 others commented on your post
+                </div>
+                <div class="notifications-txt3">
+                    5 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/chat_bubble_outline.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    <b>Johan Scholtz</b> and 65 others reacted to your post
+                </div>
+                <div class="notifications-txt3">
+                    15 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/verified2.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    Your post has been verified by 3 users and disputed by 1 user
+                </div>
+                <div class="notifications-txt3">
+                    32 min ago
+                </div>
+            </div>
+        </div>
+        <div class="d-flex mt-3 mb-4">
+            <img class="mx-auto" src="{{ url_for('static', path='img/svg/Ads/warning2.svg') }}" alt="close">
+            <div class="ms-3">
+                <div class="notifications-txt2">
+                    Your post has been removed by a moderator
+                </div>
+                <div class="notifications-txt3">
+                    55 min ago
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

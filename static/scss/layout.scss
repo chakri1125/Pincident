@@ -1,0 +1,17 @@
+.container-wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+footer {
+  a.link {
+    color: $dove-grey-dark;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
